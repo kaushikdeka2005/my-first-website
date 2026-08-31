@@ -27,19 +27,165 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
 
-    /* CHANGED BACKGROUND */
     background: #eef2ff;
 
     color: #222;
+
+    overflow-x: hidden;
 }
 
 
-/* ---------- HEADER ---------- */
+/* ========================================= */
+/* CIRCLE BACKGROUND EFFECT */
+/* ========================================= */
+
+.background-effects {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.circle {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(70px);
+
+    opacity: 0.45;
+
+    animation:
+        moveCircle
+        12s
+        ease-in-out
+        infinite alternate;
+}
+
+
+/* PURPLE */
+
+.circle-1 {
+
+    width: 420px;
+
+    height: 420px;
+
+    background: #8b5cf6;
+
+    left: -180px;
+
+    top: 5%;
+
+    animation-duration: 14s;
+}
+
+
+/* BLUE */
+
+.circle-2 {
+
+    width: 380px;
+
+    height: 380px;
+
+    background: #3b82f6;
+
+    right: -160px;
+
+    top: 35%;
+
+    animation-duration: 11s;
+
+    animation-delay: 2s;
+}
+
+
+/* PINK */
+
+.circle-3 {
+
+    width: 350px;
+
+    height: 350px;
+
+    background: #ec4899;
+
+    left: 25%;
+
+    bottom: -180px;
+
+    animation-duration: 15s;
+
+    animation-delay: 4s;
+}
+
+
+/* VIOLET */
+
+.circle-4 {
+
+    width: 260px;
+
+    height: 260px;
+
+    background: #6366f1;
+
+    left: 50%;
+
+    top: 50%;
+
+    opacity: 0.25;
+
+    animation-duration: 18s;
+
+    animation-delay: 1s;
+}
+
+
+/* MOVEMENT */
+
+@keyframes moveCircle {
+
+    0% {
+
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            translate(100px, -80px)
+            scale(1.15);
+    }
+
+    100% {
+
+        transform:
+            translate(-70px, 90px)
+            scale(0.95);
+    }
+}
+
+
+/* ========================================= */
+/* HEADER */
+/* ========================================= */
 
 .header {
+
     min-height: 70vh;
 
-    /* CHANGED HEADER BACKGROUND */
     background: linear-gradient(
         135deg,
         #1e1b4b,
@@ -48,36 +194,51 @@ body {
     );
 
     color: white;
+
+    position: relative;
+
+    z-index: 1;
+
+    overflow: hidden;
 }
 
 
 /* ---------- NAVBAR ---------- */
 
 .navbar {
+
     width: 90%;
+
     max-width: 1100px;
 
     margin: auto;
+
     padding: 25px 0;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 }
 
 
 .logo {
+
     font-size: 28px;
 }
 
 
 .nav-links {
+
     display: flex;
+
     gap: 30px;
 }
 
 
 .nav-links a {
+
     color: white;
 
     text-decoration: none;
@@ -89,6 +250,7 @@ body {
 
 
 .nav-links a:hover {
+
     color: #c4b5fd;
 }
 
@@ -96,12 +258,15 @@ body {
 /* ---------- HERO ---------- */
 
 .hero {
+
     min-height: 55vh;
 
     display: flex;
+
     flex-direction: column;
 
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
@@ -111,16 +276,18 @@ body {
 
 
 .hero h1 {
-    font-size: clamp(40px, 7vw, 75px);
+
+    font-size:
+        clamp(40px, 7vw, 75px);
 
     margin-bottom: 15px;
 }
 
 
 .hero p {
+
     font-size: 20px;
 
-    /* CHANGED */
     color: #ddd6fe;
 
     margin-bottom: 30px;
@@ -130,13 +297,13 @@ body {
 /* ---------- EXPLORE BUTTON ---------- */
 
 .hero-btn {
+
     display: inline-block;
 
     padding: 13px 28px;
 
     background: white;
 
-    /* CHANGED */
     color: #4c1d95;
 
     text-decoration: none;
@@ -150,35 +317,52 @@ body {
 
 
 .hero-btn:hover {
-    transform: translateY(-3px);
 
-    /* CHANGED */
+    transform:
+        translateY(-3px);
+
     background: #c4b5fd;
 
     box-shadow:
-        0 10px 25px rgba(76, 29, 149, 0.3);
+        0 10px 25px
+        rgba(
+            76,
+            29,
+            149,
+            0.3
+        );
 }
 
 
-/* ---------- MAIN CONTAINER ---------- */
+/* ========================================= */
+/* MAIN CONTAINER */
+/* ========================================= */
 
 .container {
+
     width: 90%;
+
     max-width: 1100px;
 
     margin: 70px auto;
 
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, 1fr);
 
     gap: 30px;
+
+    position: relative;
+
+    z-index: 2;
 }
 
 
 /* ---------- BOXES ---------- */
 
 .box {
+
     background: white;
 
     padding: 35px;
@@ -186,21 +370,36 @@ body {
     border-radius: 18px;
 
     box-shadow:
-        0 10px 30px rgba(76, 29, 149, 0.10);
+        0 10px 30px
+        rgba(
+            76,
+            29,
+            149,
+            0.10
+        );
 
     transition: 0.3s;
 }
 
 
 .box:hover {
-    transform: translateY(-8px);
+
+    transform:
+        translateY(-8px);
 
     box-shadow:
-        0 15px 35px rgba(76, 29, 149, 0.18);
+        0 15px 35px
+        rgba(
+            76,
+            29,
+            149,
+            0.18
+        );
 }
 
 
 .box h2 {
+
     font-size: 28px;
 
     margin-bottom: 10px;
@@ -208,16 +407,19 @@ body {
 
 
 .description {
-    /* CHANGED */
+
     color: #6b7280;
 
     margin-bottom: 30px;
 }
 
 
-/* ---------- FORM ---------- */
+/* ========================================= */
+/* FORM */
+/* ========================================= */
 
 form {
+
     display: flex;
 
     flex-direction: column;
@@ -227,6 +429,7 @@ form {
 
 
 .input-group {
+
     display: flex;
 
     flex-direction: column;
@@ -236,15 +439,18 @@ form {
 
 
 .input-group label {
+
     font-weight: bold;
 }
 
 
 .input-group input {
-    padding: 13px 15px;
 
-    /* CHANGED */
-    border: 1px solid #c7d2fe;
+    padding:
+        13px 15px;
+
+    border:
+        1px solid #c7d2fe;
 
     border-radius: 10px;
 
@@ -257,24 +463,33 @@ form {
 
 
 .input-group input:focus {
-    /* CHANGED */
-    border-color: #7c3aed;
+
+    border-color:
+        #7c3aed;
 
     box-shadow:
-        0 0 0 3px rgba(124, 58, 237, 0.1);
+        0 0 0 3px
+        rgba(
+            124,
+            58,
+            237,
+            0.1
+        );
 }
 
 
-/* ---------- LOGIN BUTTON ---------- */
+/* ========================================= */
+/* LOGIN BUTTON */
+/* ========================================= */
 
 button {
+
     padding: 14px;
 
     border: none;
 
     border-radius: 10px;
 
-    /* CHANGED */
     background: #4c1d95;
 
     color: white;
@@ -290,24 +505,33 @@ button {
 
 
 button:hover {
-    /* CHANGED */
+
     background: #312e81;
 
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
 
     box-shadow:
-        0 8px 20px rgba(76, 29, 149, 0.25);
+        0 8px 20px
+        rgba(
+            76,
+            29,
+            149,
+            0.25
+        );
 }
 
 
-/* ---------- BOX 2 ---------- */
+/* ========================================= */
+/* BOX 2 */
+/* ========================================= */
 
 .info {
+
     margin-top: 20px;
 
     padding: 25px;
 
-    /* CHANGED */
     background: #f5f3ff;
 
     border-radius: 15px;
@@ -317,45 +541,86 @@ button:hover {
 
 
 .info span {
+
     font-size: 45px;
+
+    display: inline-block;
+
+    animation:
+        floatingIcon
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes floatingIcon {
+
+    0% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-10px);
+    }
+
+    100% {
+
+        transform:
+            translateY(0);
+    }
 }
 
 
 .info h3 {
-    margin: 15px 0 10px;
+
+    margin:
+        15px 0 10px;
 }
 
 
 .info p {
-    /* CHANGED */
+
     color: #6b7280;
 
     line-height: 1.6;
 }
 
 
-/* ---------- FOOTER ---------- */
+/* ========================================= */
+/* FOOTER */
+/* ========================================= */
 
 footer {
+
     text-align: center;
 
     padding: 25px;
 
-    /* CHANGED */
     background: #1e1b4b;
 
-    /* CHANGED */
     color: #ddd6fe;
 
     font-size: 14px;
+
+    position: relative;
+
+    z-index: 2;
 }
 
 
-/* ---------- RESPONSIVE ---------- */
+/* ========================================= */
+/* RESPONSIVE */
+/* ========================================= */
 
 @media (max-width: 700px) {
 
     .navbar {
+
         flex-direction: column;
 
         gap: 20px;
@@ -363,16 +628,19 @@ footer {
 
 
     .hero {
+
         min-height: 50vh;
     }
 
 
     .hero h1 {
+
         font-size: 42px;
     }
 
 
     .container {
+
         grid-template-columns: 1fr;
 
         margin-top: 40px;
@@ -380,7 +648,32 @@ footer {
 
 
     .box {
+
         padding: 25px;
+    }
+
+
+    .circle-1 {
+
+        width: 280px;
+
+        height: 280px;
+    }
+
+
+    .circle-2 {
+
+        width: 250px;
+
+        height: 250px;
+    }
+
+
+    .circle-3 {
+
+        width: 230px;
+
+        height: 230px;
     }
 
 }
@@ -391,6 +684,24 @@ footer {
 
 
 <body>
+
+
+<!-- ========================================= -->
+<!-- BACKGROUND CIRCLES -->
+<!-- ========================================= -->
+
+<div class="background-effects">
+
+    <div class="circle circle-1"></div>
+
+    <div class="circle circle-2"></div>
+
+    <div class="circle circle-3"></div>
+
+    <div class="circle circle-4"></div>
+
+</div>
+
 
 
 <!-- ================= HEADER ================= -->
@@ -409,7 +720,7 @@ footer {
 
         <div class="nav-links">
 
-            <a href="#">
+            <a href="https://www.google.com">
                 Home
             </a>
 
@@ -436,8 +747,12 @@ footer {
         </p>
 
 
-        <a href="#content" class="hero-btn">
+        <a
+            href="#content"
+            class="hero-btn">
+
             Explore
+
         </a>
 
     </div>
@@ -448,7 +763,9 @@ footer {
 
 <!-- ================= MAIN CONTENT ================= -->
 
-<main class="container" id="content">
+<main
+    class="container"
+    id="content">
 
 
     <!-- BOX 1 -->
@@ -509,7 +826,9 @@ footer {
             <!-- BUTTON -->
 
             <button type="submit">
+
                 Login
+
             </button>
 
 
@@ -546,8 +865,10 @@ footer {
 
 
             <p>
+
                 I am learning HTML, CSS and JavaScript
                 and building my first website.
+
             </p>
 
         </div>
@@ -564,7 +885,10 @@ footer {
 <footer>
 
     <p>
-        © 2026 MyWorld | Made with ❤️ and code
+
+        © 2026 MyWorld |
+        Made with ❤️ and code
+
     </p>
 
 </footer>
@@ -580,19 +904,24 @@ const loginForm =
 
 
 loginForm.addEventListener(
+
     "submit",
+
     function(event) {
 
         event.preventDefault();
 
+
         const name =
             document.getElementById("name").value;
+
 
         alert(
             `Welcome, ${name}! 🚀`
         );
 
     }
+
 );
 
 </script>
@@ -601,4 +930,3 @@ loginForm.addEventListener(
 </body>
 
 </html>
-
